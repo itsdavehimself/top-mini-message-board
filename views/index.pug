@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div.new-post
+    a(href="/new")
+      button= 'Add Post'
+  div.all-messages
+    each message in messages
+      div.message
+        p.text= message.text
+        p.user= message.user
+        p.date= message.added
